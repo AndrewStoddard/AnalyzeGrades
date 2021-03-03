@@ -10,6 +10,7 @@ int main(int argc, char* argv[])
         cout << argv[i] << endl;
     }
     ArgumentParser parser(argv, argc);
+    parser.parse();
 
     return 0;
 }

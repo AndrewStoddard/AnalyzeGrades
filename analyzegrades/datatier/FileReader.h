@@ -11,6 +11,9 @@ public:
     FileReader();
     virtual ~FileReader();
 
+    const string& getInfile() const;
+    void setInfile(const string& infile);
+
 protected:
 
 private:

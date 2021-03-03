@@ -13,6 +13,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="datatier" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -22,6 +23,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="datatier" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -32,7 +34,19 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="controller/AnalyzeGradeController.cpp" />
+		<Unit filename="controller/AnalyzeGradeController.h" />
+		<Unit filename="datatier/ArgumentParser.cpp" />
+		<Unit filename="datatier/ArgumentParser.h" />
+		<Unit filename="datatier/ConsoleOutput.cpp" />
+		<Unit filename="datatier/ConsoleOutput.h" />
+		<Unit filename="datatier/FileReader.cpp" />
+		<Unit filename="datatier/FileReader.h" />
+		<Unit filename="datatier/FileWriter.cpp" />
+		<Unit filename="datatier/FileWriter.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="model/Student.cpp" />
+		<Unit filename="model/Student.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
