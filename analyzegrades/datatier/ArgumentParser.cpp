@@ -27,24 +27,22 @@ ArgumentParser::~ArgumentParser()
 bool ArgumentParser::parse()){
     bool cFlag = false;
     bool rFlag = false;
-    string inputFile;
-    string outputFile;
-    int colNumber;
-    string firstName;
-    string lastName;
+    FileReader fileReader();
+    FileWriter fileWriter();
+    ConsoleOutput consoleOutput();
     for (int i = 1; i < argc; i++){
         string arg(argv[i]);
         if (cFlag) {
-            colNumber = stoi(arg);
+            consoleOutput.setColNumber(stoi(arg));
             cFlag = false;
         } else if (rFlag) {
             if (arg[0] == "-") {
                 return false;
             }
-            if (firstName.empty()) {
-                firstName = arg;
+            if (consoleOutput.getRemovedFirstName().empty()) {
+                consoleOutput.setRemovedFirstName(arg);
             } else {
-                lastName = arg;
+                consoleOutput.setRemovedLastName(arg);
                 rFlag = false;
             }
         } else if (arg[0] == "-") {
@@ -52,37 +50,40 @@ bool ArgumentParser::parse()){
                 return false;
             } else if (arg == "-c"){
                 cFlag = true;
-
             } else if (arg == "-g"){
-
+                consoleOutput.setGFlag(true);
             } else if (arg == "-o"){
-
+                fileWriter.setAutoOverwrit(true);
             } else if(arg == "-r"){
                 rFlag = true;
-
             } else if(arg == "-sf"){
-
+                consoleOutput.setSFFlag(true);
             } else if(arg == "-sg"){
-
+                consoleOutput.setSGFlag(true);
             } else {
                 return false;
             }
         } else {
-            if (inputFile.empty()) {
+            if (fileReader.getInfile().empty()) {
                 ifstream infile(arg);
                 if (infile.good()) {
-                    inputFile == arg;
+                    fileReader.setInfile(arg);
                 } else {
                     return false;
                 }
 
-            } else if (outputFile.empty()) {
-                outputFile == arg;
+            } else if (fileReader.getOutfile.empty()) {
+                fileReader.setOutFile(arg);
             } else {
                 return false;
             }
         }
+        gradeController.setFileReader(fileReader);
+        gradeController.setFileWriter(fileWriter);
+        gradeController.setConsoleOutput(consoleOutput);
+        return true;
     }
+
 }
 
 }

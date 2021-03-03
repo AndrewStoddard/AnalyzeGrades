@@ -10,6 +10,9 @@ class FileWriter
 public:
     FileWriter();
     virtual ~FileWriter();
+    const string& getOutfile() const;
+    void setOutfile(const string& outfile);
+    void setAutoOverwrite(bool flag);
 
 protected:
 
