@@ -1,6 +1,8 @@
 #ifndef CONSOLEOUTPUT_H
 #define CONSOLEOUTPUT_H
 
+#include <string>
+using namespace std;
 namespace datatier
 {
 class ConsoleOutput
@@ -12,6 +14,8 @@ public:
 protected:
 
 private:
+    int columnNumber;
+    string output;
 };
 }
 

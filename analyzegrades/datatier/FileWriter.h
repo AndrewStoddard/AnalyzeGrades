@@ -1,6 +1,8 @@
 #ifndef FILEWRITER_H
 #define FILEWRITER_H
 
+#include <string>
+using namespace std;
 namespace datatier
 {
 class FileWriter
@@ -12,6 +14,9 @@ public:
 protected:
 
 private:
+    string outfile;
+    bool autoOverwrite;
+
 };
 }
 

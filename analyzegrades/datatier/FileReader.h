@@ -1,6 +1,8 @@
 #ifndef FILEREADER_H
 #define FILEREADER_H
 
+#include <string>
+using namespace std;
 namespace datatier
 {
 class FileReader
@@ -12,6 +14,7 @@ public:
 protected:
 
 private:
+    string infile;
 };
 
 }

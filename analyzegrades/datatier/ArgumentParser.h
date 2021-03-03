@@ -5,13 +5,15 @@ namespace datatier
 {
 class ArgumentParser
 {
-public:
-    ArgumentParser();
-    virtual ~ArgumentParser();
-
-protected:
-
 private:
+    int argc;
+    char* argv[];
+
+
+public:
+    ArgumentParser(char* argv[], int argc);
+    virtual ~ArgumentParser();
+    void parse();
 };
 }
 

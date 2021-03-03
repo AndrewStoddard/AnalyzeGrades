@@ -1,0 +1,43 @@
+# depslib dependency file v1.0
+1614726369 source:/home/astodda2/Desktop/AnalyzeGrades/analyzegrades/controller/AnalyzeGradeController.cpp
+	"AnalyzeGradeController.h"
+
+1614728130 /home/astodda2/Desktop/AnalyzeGrades/analyzegrades/controller/AnalyzeGradeController.h
+	"FileReader.h"
+	"FileWriter.h"
+	"ConsoleOutput.h"
+
+1614727232 /home/astodda2/Desktop/AnalyzeGrades/analyzegrades/datatier/FileReader.h
+	<string>
+
+1614728053 /home/astodda2/Desktop/AnalyzeGrades/analyzegrades/datatier/FileWriter.h
+	<string>
+
+1614727267 /home/astodda2/Desktop/AnalyzeGrades/analyzegrades/datatier/ConsoleOutput.h
+	<string>
+
+1614726966 source:/home/astodda2/Desktop/AnalyzeGrades/analyzegrades/datatier/ConsoleOutput.cpp
+	"ConsoleOutput.h"
+
+1614726960 source:/home/astodda2/Desktop/AnalyzeGrades/analyzegrades/datatier/FileReader.cpp
+	"FileReader.h"
+
+1614726957 source:/home/astodda2/Desktop/AnalyzeGrades/analyzegrades/datatier/FileWriter.cpp
+	"FileWriter.h"
+
+1614724694 source:/home/astodda2/Desktop/AnalyzeGrades/analyzegrades/model/Student.cpp
+	"Student.h"
+
+1614725782 /home/astodda2/Desktop/AnalyzeGrades/analyzegrades/model/Student.h
+	<string>
+
+1614728975 source:/home/astodda2/Desktop/AnalyzeGrades/analyzegrades/datatier/ArgumentParser.cpp
+	"ArgumentParser.h"
+	<iostream>
+
+1614729465 /home/astodda2/Desktop/AnalyzeGrades/analyzegrades/datatier/ArgumentParser.h
+
+1614729408 source:/home/astodda2/Desktop/AnalyzeGrades/analyzegrades/main.cpp
+	<iostream>
+	"ArgumentParser.h"
+
