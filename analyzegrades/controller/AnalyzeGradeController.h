@@ -20,13 +20,13 @@ public:
     AnalyzeGradeController();
     virtual ~AnalyzeGradeController();
 
-    void setConsoleOutput(const ConsoleOutput& consoleOutput);
-    void setFileReader(const FileReader& fileReader);
-    void setFileWriter(const FileWriter& fileWriter);
+    void setConsoleOutput(const ConsoleOutput consoleOutput);
+    void setFileReader(const FileReader fileReader);
+    void setFileWriter(const FileWriter fileWriter);
 
-    ConsoleOutput& getConsoleOutput() const;
-    FileReader& getFileReader() const;
-    FileWriter& getFileWriter() const;
+    const ConsoleOutput& getConsoleOutput() const;
+    const FileReader& getFileReader() const;
+    const FileWriter& getFileWriter() const;
 
 
 

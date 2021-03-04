@@ -17,6 +17,19 @@ ConsoleOutput::~ConsoleOutput()
     //dtor
 }
 
+bool ConsoleOutput::getGFlag() const {
+    return this->gFlag;
+}
+bool ConsoleOutput::getSFFlag() const {
+    return this->sfFlag;
+}
+bool ConsoleOutput::getSGFlag() const {
+    return this->sgFlag;
+}
+int ConsoleOutput::getColumnNumber() const {
+    return this->columnNumber;
+}
+
 const string& ConsoleOutput::getRemovedFirstName() const {
     return this->removedFirstName;
 }

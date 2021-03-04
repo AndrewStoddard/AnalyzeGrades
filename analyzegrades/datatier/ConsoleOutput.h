@@ -17,6 +17,12 @@ public:
     void setGFlag(bool flag);
     void setSFFlag(bool flag);
     void setSGFlag(bool flag);
+    bool getGFlag() const;
+    bool getSFFlag() const;
+    bool getSGFlag() const;
+    int getColumnNumber() const;
+
+
     void setColumnNumber(int colNumber);
     const string& getOutput() const;
 

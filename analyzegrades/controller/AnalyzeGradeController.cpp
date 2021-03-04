@@ -5,7 +5,7 @@ namespace controller
 {
 AnalyzeGradeController::AnalyzeGradeController()
 {
-    //ctor
+
 }
 
 AnalyzeGradeController::~AnalyzeGradeController()
@@ -14,23 +14,23 @@ AnalyzeGradeController::~AnalyzeGradeController()
 }
 
 
-void AnalyzeGradeController::setConsoleOutput(const ConsoleOutput& consoleOutput) {
+void AnalyzeGradeController::setConsoleOutput(const ConsoleOutput consoleOutput) {
     this->consoleOutput = consoleOutput;
 }
-void AnalyzeGradeController::setFileReader(const FileReader& fileReader) {
+void AnalyzeGradeController::setFileReader(const FileReader fileReader) {
     this->fileReader = fileReader;
 }
-void AnalyzeGradeController::setFileWriter(const FileWriter& fileWriter) {
+void AnalyzeGradeController::setFileWriter(const FileWriter fileWriter) {
     this->fileWriter = fileWriter;
 }
 
-ConsoleOutput& AnalyzeGradeController::getConsoleOutput() const {
+const ConsoleOutput& AnalyzeGradeController::getConsoleOutput() const {
     return this->consoleOutput;
 }
-FileReader& AnalyzeGradeController::getFileReader() const {
+const FileReader& AnalyzeGradeController::getFileReader() const {
     return this->fileReader;
 }
-FileWriter& AnalyzeGradeController::getFileWriter() const {
+const FileWriter& AnalyzeGradeController::getFileWriter() const {
     return this->fileWriter;
 }
 

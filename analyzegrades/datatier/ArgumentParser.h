@@ -16,6 +16,7 @@ public:
     ArgumentParser(char**& argv, int argc);
     virtual ~ArgumentParser();
     bool parse();
+    const AnalyzeGradeController& getGradeController() const;
 };
 }
 

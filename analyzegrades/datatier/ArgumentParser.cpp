@@ -5,6 +5,9 @@
 #include "FileReader.h"
 #include "FileWriter.h"
 #include "ConsoleOutput.h"
+#include "AnalyzeGradeController.h"
+
+using namespace controller;
 
 using namespace std;
 
@@ -14,7 +17,7 @@ ArgumentParser::ArgumentParser(char**& argv, int argc)
 {
     this->argc = argc;
     this->argv = argv;
-    this->gradeController = new AnalyzeGradeController();
+    this->gradeController = AnalyzeGradeController();
 
 }
 
@@ -23,20 +26,24 @@ ArgumentParser::~ArgumentParser()
     //dtor
 }
 
+const AnalyzeGradeController& ArgumentParser::getGradeController() const {
+    return this->gradeController;
+}
 
-bool ArgumentParser::parse()){
+
+bool ArgumentParser::parse(){
     bool cFlag = false;
     bool rFlag = false;
-    FileReader fileReader();
-    FileWriter fileWriter();
-    ConsoleOutput consoleOutput();
+    FileReader fileReader = FileReader();
+    FileWriter fileWriter = FileWriter();
+    ConsoleOutput consoleOutput = ConsoleOutput();
     for (int i = 1; i < argc; i++){
         string arg(argv[i]);
         if (cFlag) {
-            consoleOutput.setColNumber(stoi(arg));
+            consoleOutput.setColumnNumber(stoi(arg));
             cFlag = false;
         } else if (rFlag) {
-            if (arg[0] == "-") {
+            if (arg[0] == '-') {
                 return false;
             }
             if (consoleOutput.getRemovedFirstName().empty()) {
@@ -45,7 +52,7 @@ bool ArgumentParser::parse()){
                 consoleOutput.setRemovedLastName(arg);
                 rFlag = false;
             }
-        } else if (arg[0] == "-") {
+        } else if (arg[0] == '-') {
             if (arg == "--help"){
                 return false;
             } else if (arg == "-c"){
@@ -53,7 +60,7 @@ bool ArgumentParser::parse()){
             } else if (arg == "-g"){
                 consoleOutput.setGFlag(true);
             } else if (arg == "-o"){
-                fileWriter.setAutoOverwrit(true);
+                fileWriter.setAutoOverwrite(true);
             } else if(arg == "-r"){
                 rFlag = true;
             } else if(arg == "-sf"){
@@ -72,8 +79,8 @@ bool ArgumentParser::parse()){
                     return false;
                 }
 
-            } else if (fileReader.getOutfile.empty()) {
-                fileReader.setOutFile(arg);
+            } else if (fileWriter.getOutfile().empty()) {
+                fileWriter.setOutfile(arg);
             } else {
                 return false;
             }
@@ -81,8 +88,9 @@ bool ArgumentParser::parse()){
         gradeController.setFileReader(fileReader);
         gradeController.setFileWriter(fileWriter);
         gradeController.setConsoleOutput(consoleOutput);
-        return true;
+
     }
+    return true;
 
 }
 
