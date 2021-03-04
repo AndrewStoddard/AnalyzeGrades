@@ -1,14 +1,16 @@
 # depslib dependency file v1.0
-1614823808 source:/home/astodda2/Desktop/AnalyzeGrades/analyzegrades/controller/AnalyzeGradeController.cpp
+1614876474 source:/home/astodda2/Desktop/AnalyzeGrades/analyzegrades/controller/AnalyzeGradeController.cpp
 	"AnalyzeGradeController.h"
 
-1614823610 /home/astodda2/Desktop/AnalyzeGrades/analyzegrades/controller/AnalyzeGradeController.h
+1614876502 /home/astodda2/Desktop/AnalyzeGrades/analyzegrades/controller/AnalyzeGradeController.h
 	"FileReader.h"
 	"FileWriter.h"
 	"ConsoleOutput.h"
 
-1614797337 /home/astodda2/Desktop/AnalyzeGrades/analyzegrades/datatier/FileReader.h
+1614876307 /home/astodda2/Desktop/AnalyzeGrades/analyzegrades/datatier/FileReader.h
+	<vector>
 	<string>
+	"../model/Student.h"
 
 1614800268 /home/astodda2/Desktop/AnalyzeGrades/analyzegrades/datatier/FileWriter.h
 	<string>
@@ -19,8 +21,11 @@
 1614826984 source:/home/astodda2/Desktop/AnalyzeGrades/analyzegrades/datatier/ConsoleOutput.cpp
 	"ConsoleOutput.h"
 
-1614800482 source:/home/astodda2/Desktop/AnalyzeGrades/analyzegrades/datatier/FileReader.cpp
+1614876403 source:/home/astodda2/Desktop/AnalyzeGrades/analyzegrades/datatier/FileReader.cpp
 	"FileReader.h"
+	<iostream>
+	<fstream>
+	<sstream>
 
 1614800508 source:/home/astodda2/Desktop/AnalyzeGrades/analyzegrades/datatier/FileWriter.cpp
 	"FileWriter.h"
@@ -44,8 +49,10 @@
 1614827048 /home/astodda2/Desktop/AnalyzeGrades/analyzegrades/datatier/ArgumentParser.h
 	"AnalyzeGradeController.h"
 
-1614827268 source:/home/astodda2/Desktop/AnalyzeGrades/analyzegrades/main.cpp
+1614876914 source:/home/astodda2/Desktop/AnalyzeGrades/analyzegrades/main.cpp
 	<iostream>
 	"ArgumentParser.h"
 	"AnalyzeGradeController.h"
+	<vector>
+	"model/Student.h"
 

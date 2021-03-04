@@ -1,7 +1,9 @@
 #ifndef FILEREADER_H
 #define FILEREADER_H
-
+#include <vector>
 #include <string>
+#include "../model/Student.h"
+using namespace model;
 using namespace std;
 namespace datatier
 {
@@ -13,6 +15,8 @@ public:
 
     const string& getInfile() const;
     void setInfile(const string& infile);
+    Student readStudentFromCSVString(string& line);
+    vector<Student> readFile();
 
 protected:
 

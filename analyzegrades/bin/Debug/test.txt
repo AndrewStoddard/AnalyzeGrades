@@ -1,0 +1,3 @@
+Alan,Walker,50
+Andrew,Stoddard,30
+Tom,Sanders,80

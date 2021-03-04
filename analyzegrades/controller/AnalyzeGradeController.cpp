@@ -27,7 +27,7 @@ void AnalyzeGradeController::setFileWriter(const FileWriter fileWriter) {
 const ConsoleOutput& AnalyzeGradeController::getConsoleOutput() const {
     return this->consoleOutput;
 }
-const FileReader& AnalyzeGradeController::getFileReader() const {
+FileReader AnalyzeGradeController::getFileReader() const {
     return this->fileReader;
 }
 const FileWriter& AnalyzeGradeController::getFileWriter() const {

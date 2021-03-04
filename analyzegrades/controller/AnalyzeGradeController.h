@@ -25,7 +25,7 @@ public:
     void setFileWriter(const FileWriter fileWriter);
 
     const ConsoleOutput& getConsoleOutput() const;
-    const FileReader& getFileReader() const;
+    FileReader getFileReader() const;
     const FileWriter& getFileWriter() const;
 
 
