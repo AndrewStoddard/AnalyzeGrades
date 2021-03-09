@@ -16,9 +16,20 @@ int main(int argc, char* argv[])
 
     if(result) {
         vector<Student> students = controller.getFileReader().readFile();
-        cout << students.size() << endl;
+        string output = to_string(students.size());
+
+        output.append("\n");
         for(vector<Student>::size_type i = 0; i < students.size(); i++) {
-            cout << students[i].getName() << ": " << students[i].getGrade() << endl;
+            output.append(students[i].getName());
+            output.append(": ");
+            output.append(to_string(students[i].getGrade()));
+            output.append("\n");
+        }
+        cout << output << endl;
+        if(!controller.getFileWriter().getOutfile().empty()) {
+
+            controller.getFileWriter().writeToFile(output);
+            cout << "Wrote to File" << endl;
         }
     }
 

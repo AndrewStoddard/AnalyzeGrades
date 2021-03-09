@@ -30,7 +30,7 @@ const ConsoleOutput& AnalyzeGradeController::getConsoleOutput() const {
 FileReader AnalyzeGradeController::getFileReader() const {
     return this->fileReader;
 }
-const FileWriter& AnalyzeGradeController::getFileWriter() const {
+FileWriter AnalyzeGradeController::getFileWriter() const {
     return this->fileWriter;
 }
 

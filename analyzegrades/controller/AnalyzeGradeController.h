@@ -26,7 +26,7 @@ public:
 
     const ConsoleOutput& getConsoleOutput() const;
     FileReader getFileReader() const;
-    const FileWriter& getFileWriter() const;
+    FileWriter getFileWriter() const;
 
 
 

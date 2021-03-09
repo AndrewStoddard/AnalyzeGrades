@@ -13,12 +13,14 @@ public:
     const string& getOutfile() const;
     void setOutfile(const string& outfile);
     void setAutoOverwrite(bool flag);
+    void writeToFile(const string& output);
 
 protected:
 
 private:
     string outfile;
     bool autoOverwrite;
+    bool askOverride();
 
 };
 }
