@@ -64,8 +64,14 @@ bool ArgumentParser::parse(){
             } else if(arg == "-r"){
                 rFlag = true;
             } else if(arg == "-sf"){
+                if(consoleOutput.getSGFlag()){
+                    return false;
+                }
                 consoleOutput.setSFFlag(true);
             } else if(arg == "-sg"){
+                if(consoleOutput.getSFFlag()){
+                    return false;
+                }
                 consoleOutput.setSGFlag(true);
             } else {
                 return false;
