@@ -24,10 +24,11 @@ public:
     void setFileReader(const FileReader fileReader);
     void setFileWriter(const FileWriter fileWriter);
 
-    const ConsoleOutput& getConsoleOutput() const;
+    ConsoleOutput getConsoleOutput() const;
     FileReader getFileReader() const;
     FileWriter getFileWriter() const;
 
+    static vector<Student> AnalyzeGradeController::getStudentsWithGradeLetter(const string& gradeLetter)
 
 
 };

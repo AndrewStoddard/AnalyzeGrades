@@ -21,6 +21,7 @@ public:
     bool getSFFlag() const;
     bool getSGFlag() const;
     int getColumnNumber() const;
+    void makeOutput();
 
 
     void setColumnNumber(int colNumber);

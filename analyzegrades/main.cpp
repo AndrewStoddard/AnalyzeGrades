@@ -31,6 +31,8 @@ int main(int argc, char* argv[])
             controller.getFileWriter().writeToFile(output);
             cout << "Wrote to File" << endl;
         }
+        controller.getConsoleOutput().makeOutput();
+
     }
 
     return 0;

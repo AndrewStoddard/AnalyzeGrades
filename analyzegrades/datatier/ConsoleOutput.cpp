@@ -1,4 +1,8 @@
 #include "ConsoleOutput.h"
+#include <iostream>
+#include <sstream>
+#include <iomanip>
+using namespace std;
 namespace datatier
 {
 ConsoleOutput::ConsoleOutput()
@@ -10,6 +14,13 @@ ConsoleOutput::ConsoleOutput()
     this->sfFlag = false;
     this->sgFlag = false;
     this->columnNumber = 3;
+}
+
+void ConsoleOutput::makeOutput() {
+    ostringstream  out;
+    out << "Test" << setw(22) << "Test2" << setw(22) << "Test3";
+    this->output = out.str();
+    cout << this->output << endl;
 }
 
 ConsoleOutput::~ConsoleOutput()
