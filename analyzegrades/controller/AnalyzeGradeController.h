@@ -26,6 +26,8 @@ public:
     ConsoleOutput getConsoleOutput();
     FileReader getFileReader() const;
     FileWriter getFileWriter() const;
+    void work();
+    void printHelp();
 
 
 

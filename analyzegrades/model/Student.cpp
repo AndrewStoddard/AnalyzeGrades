@@ -5,26 +5,35 @@ namespace model
 
 Student::Student()
 {
-    this->name = string();
-    this->grade = 0;
+
 }
-Student::Student(const string& name, int grade)
+Student::Student(const string& firstName, const string& lastName, int grade)
 {
-    this->name = name;
+    this->firstName = firstName;
+    this->lastName = lastName;
     this->grade = grade;
 }
 Student::~Student()
 {
     //dtor
 }
-
-const string& Student::getName() const
+const string& Student::getFirstName() const
 {
-    return this->name;
+    return this->firstName;
 }
-void Student::setName(const string& name)
+
+const string& Student::getLastName() const
 {
-    this->name = name;
+    return this->lastName;
+}
+void Student::setFirstName(const string& firstName)
+{
+    this->firstName = firstName;
+}
+
+void Student::setLastName(const string& lastName)
+{
+    this->lastName = lastName;
 }
 
 int Student::getGrade() const

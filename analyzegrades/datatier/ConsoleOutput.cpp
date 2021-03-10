@@ -21,8 +21,13 @@ ConsoleOutput::ConsoleOutput()
 
 void ConsoleOutput::makeOutput(Roster& roster) {
     ostringstream result;
+    roster.remove(this->removedFirstName, this->removedLastName);
     if (this->sgFlag) {
         roster.sortByGrade();
+    } else if (this->sfFlag) {
+        roster.sortByFirstName();
+    } else {
+        roster.sortByLastName();
     }
     char letterGrades[5] = {'A', 'B', 'C', 'D', 'F'};
     for (int i = 0; i < 5; i++) {
@@ -33,10 +38,10 @@ void ConsoleOutput::makeOutput(Roster& roster) {
             for (vector<Student>::size_type j = 0; j < students.size(); j++) {
 
                 result << setw(22) << left << getOutputForStudent(students[j]);
-
-                if (j % this->columnNumber == 2) {
+                if ((j + 1) % this->columnNumber == 0 && (j + 1) != students.size()) {
                     result << endl;
                 }
+
             }
             result << endl;
         }
@@ -44,12 +49,11 @@ void ConsoleOutput::makeOutput(Roster& roster) {
 
     }
     this->output = result.str();
-    cout << this->output;
 }
 
 string ConsoleOutput::getOutputForStudent(Student student) {
     ostringstream result;
-    result << student.getName();
+    result << student.getFirstName() << " " << student.getLastName();
     if (this->gFlag) {
         result << " (" << student.getGrade() << ")";
     }

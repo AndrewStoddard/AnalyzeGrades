@@ -1,0 +1,9 @@
+Students earning a A:
+Kate Head (93)        Jim John (92)         Loch Ness (99)        
+Allen Pan (90)        
+Students earning a B:
+Rob Green (83)        Tony Lazuto (85)      
+Students earning a D:
+Tom Sanders (60)      
+Students earning a F:
+Aoi Pill (32)         Andrew Stoddard (40)  Alan Walker (20)      

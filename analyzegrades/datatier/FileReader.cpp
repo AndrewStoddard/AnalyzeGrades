@@ -38,7 +38,7 @@ Student FileReader::readStudentFromCSVString(string& line) {
       item[0] = toupper(item[0]);
       items.push_back(item);
    }
-   Student student(items[0] + " " + items[1], stoi(items[2]));
+   Student student(items[0], items[1], stoi(items[2]));
    return student;
 }
 

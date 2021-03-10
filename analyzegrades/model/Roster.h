@@ -2,6 +2,7 @@
 #define ROSTER_H
 #include "Student.h"
 #include <vector>
+#include "string"
 
 using namespace std;
 namespace model {
@@ -17,6 +18,7 @@ class Roster
         void sortByFirstName();
         void sortByLastName();
         int size();
+        void remove(const string& firstName, const string& lastName);
 
     protected:
 

@@ -37,8 +37,11 @@ bool ArgumentParser::parse(){
     FileReader fileReader = FileReader();
     FileWriter fileWriter = FileWriter();
     ConsoleOutput consoleOutput = ConsoleOutput();
-    for (int i = 1; i < argc; i++){
-        string arg(argv[i]);
+    if(this->argc < 2) {
+        return false;
+    }
+    for (int i = 1; i < this->argc; i++){
+        string arg(this->argv[i]);
         if (cFlag) {
             consoleOutput.setColumnNumber(stoi(arg));
             cFlag = false;
@@ -91,11 +94,16 @@ bool ArgumentParser::parse(){
                 return false;
             }
         }
-        gradeController.setFileReader(fileReader);
-        gradeController.setFileWriter(fileWriter);
-        gradeController.setConsoleOutput(consoleOutput);
+
+
 
     }
+    if (fileReader.getInfile().empty()) {
+            return false;
+    }
+    gradeController.setFileReader(fileReader);
+    gradeController.setFileWriter(fileWriter);
+    gradeController.setConsoleOutput(consoleOutput);
     return true;
 
 }

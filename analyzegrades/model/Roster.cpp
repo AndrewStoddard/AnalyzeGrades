@@ -23,10 +23,22 @@ void Roster::sortByGrade() {
     });
 }
 void Roster::sortByFirstName() {
-
+    sort(this->students.begin(), this->students.end(), [](Student a, Student b){
+        return a.getFirstName() < b.getFirstName();
+    });
 }
 void Roster::sortByLastName() {
+    sort(this->students.begin(), this->students.end(), [](Student a, Student b){
+        return a.getLastName() < b.getLastName();
+    });
+}
+void Roster::remove(const string& firstName, const string& lastName) {
+    for (int i = 0; i < this->size(); i++) {
 
+        if (this->students[i].getFirstName() == firstName && this->students[i].getLastName() == lastName) {
+            this->students.erase(this->students.begin()+i);
+        }
+    }
 }
 
 int Roster::size() {

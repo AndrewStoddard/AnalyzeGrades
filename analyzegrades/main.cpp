@@ -17,16 +17,10 @@ int main(int argc, char* argv[])
     AnalyzeGradeController controller = parser.getGradeController();
 
     if(result) {
-        Roster roster = controller.getFileReader().readFile();
+        controller.work();
 
-        controller.getConsoleOutput().makeOutput(roster);
-        cout << controller.getConsoleOutput().getOutput() << endl;
-        if(!controller.getFileWriter().getOutfile().empty()) {
-
-            //controller.getFileWriter().writeToFile(output);
-            cout << "Wrote to File" << endl;
-        }
-
+    } else {
+        controller.printHelp();
     }
 
     return 0;
