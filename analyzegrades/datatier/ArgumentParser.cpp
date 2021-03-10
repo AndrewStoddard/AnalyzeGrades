@@ -5,6 +5,7 @@
 #include "FileReader.h"
 #include "FileWriter.h"
 #include "ConsoleOutput.h"
+#include <algorithm>
 #include "AnalyzeGradeController.h"
 
 using namespace controller;
@@ -43,10 +44,15 @@ bool ArgumentParser::parse(){
     for (int i = 1; i < this->argc; i++){
         string arg(this->argv[i]);
         if (cFlag) {
+            if (arg[0] == '-' || !all_of(arg.begin(), arg.end(), ::isdigit)) {
+                cout << "No column amount specified" << endl;
+                return false;
+            }
             consoleOutput.setColumnNumber(stoi(arg));
             cFlag = false;
         } else if (rFlag) {
             if (arg[0] == '-') {
+                cout << "No Name to Remove Specified" << endl;
                 return false;
             }
             if (consoleOutput.getRemovedFirstName().empty()) {
@@ -68,11 +74,13 @@ bool ArgumentParser::parse(){
                 rFlag = true;
             } else if(arg == "-sf"){
                 if(consoleOutput.getSGFlag()){
+                    cout << "Cannot specify both -sg and -sf" << endl;
                     return false;
                 }
                 consoleOutput.setSFFlag(true);
             } else if(arg == "-sg"){
                 if(consoleOutput.getSFFlag()){
+                    cout << "Cannot specify both -sf and -sg" << endl;
                     return false;
                 }
                 consoleOutput.setSGFlag(true);
@@ -85,12 +93,14 @@ bool ArgumentParser::parse(){
                 if (infile.good()) {
                     fileReader.setInfile(arg);
                 } else {
+                    cout << "Input File Not Found" << endl;
                     return false;
                 }
 
             } else if (fileWriter.getOutfile().empty()) {
                 fileWriter.setOutfile(arg);
             } else {
+                cout << "No Input File Specified" << endl;
                 return false;
             }
         }
@@ -107,5 +117,6 @@ bool ArgumentParser::parse(){
     return true;
 
 }
+
 
 }

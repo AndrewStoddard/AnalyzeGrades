@@ -10,6 +10,7 @@ private:
     int argc;
     char** argv;
     AnalyzeGradeController gradeController;
+    bool isNumber(const string& str);
 
 
 public:
