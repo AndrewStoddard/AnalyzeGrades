@@ -2,6 +2,7 @@
 #define FILEREADER_H
 #include <vector>
 #include <string>
+#include "Roster.h"
 #include "../model/Student.h"
 using namespace model;
 using namespace std;
@@ -16,7 +17,7 @@ public:
     const string& getInfile() const;
     void setInfile(const string& infile);
     Student readStudentFromCSVString(string& line);
-    vector<Student> readFile();
+    Roster readFile();
 
 protected:
 

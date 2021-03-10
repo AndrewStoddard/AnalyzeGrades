@@ -2,6 +2,9 @@
 #include <iostream>
 #include <sstream>
 #include <iomanip>
+#include <string>
+#include "Student.h"
+using namespace model;
 using namespace std;
 namespace datatier
 {
@@ -16,12 +19,44 @@ ConsoleOutput::ConsoleOutput()
     this->columnNumber = 3;
 }
 
-void ConsoleOutput::makeOutput() {
-    ostringstream  out;
-    out << "Test" << setw(22) << "Test2" << setw(22) << "Test3";
-    this->output = out.str();
-    cout << this->output << endl;
+void ConsoleOutput::makeOutput(Roster& roster) {
+    ostringstream result;
+    if (this->sgFlag) {
+        roster.sortByGrade();
+    }
+    char letterGrades[5] = {'A', 'B', 'C', 'D', 'F'};
+    for (int i = 0; i < 5; i++) {
+        vector<Student> students = roster.getStudentsWithLetterGrade(letterGrades[i]);
+
+        if(!students.empty()) {
+            result << "Students earning a " << letterGrades[i] << ":" << endl;
+            for (vector<Student>::size_type j = 0; j < students.size(); j++) {
+
+                result << setw(22) << left << getOutputForStudent(students[j]);
+
+                if (j % this->columnNumber == 2) {
+                    result << endl;
+                }
+            }
+            result << endl;
+        }
+
+
+    }
+    this->output = result.str();
+    cout << this->output;
 }
+
+string ConsoleOutput::getOutputForStudent(Student student) {
+    ostringstream result;
+    result << student.getName();
+    if (this->gFlag) {
+        result << " (" << student.getGrade() << ")";
+    }
+
+    return result.str();
+}
+
 
 ConsoleOutput::~ConsoleOutput()
 {
@@ -68,6 +103,8 @@ void ConsoleOutput::setColumnNumber(int colNumber) {
 const string& ConsoleOutput::getOutput() const {
     return this->output;
 }
+
+
 
 
 }

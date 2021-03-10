@@ -13,11 +13,8 @@ AnalyzeGradeController::~AnalyzeGradeController()
     //dtor
 }
 
-static vector<Student> AnalyzeGradeController::getStudentsWithGradeLetter(const string& gradeLetter) {
-}
 
-
-void AnalyzeGradeController::setConsoleOutput(const ConsoleOutput consoleOutput) {
+void AnalyzeGradeController::setConsoleOutput(ConsoleOutput consoleOutput) {
     this->consoleOutput = consoleOutput;
 }
 void AnalyzeGradeController::setFileReader(const FileReader fileReader) {
@@ -27,7 +24,8 @@ void AnalyzeGradeController::setFileWriter(const FileWriter fileWriter) {
     this->fileWriter = fileWriter;
 }
 
-ConsoleOutput AnalyzeGradeController::getConsoleOutput() const {
+
+ConsoleOutput AnalyzeGradeController::getConsoleOutput() {
     return this->consoleOutput;
 }
 FileReader AnalyzeGradeController::getFileReader() const {

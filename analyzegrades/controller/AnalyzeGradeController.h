@@ -23,12 +23,10 @@ public:
     void setConsoleOutput(const ConsoleOutput consoleOutput);
     void setFileReader(const FileReader fileReader);
     void setFileWriter(const FileWriter fileWriter);
-
-    ConsoleOutput getConsoleOutput() const;
+    ConsoleOutput getConsoleOutput();
     FileReader getFileReader() const;
     FileWriter getFileWriter() const;
 
-    static vector<Student> AnalyzeGradeController::getStudentsWithGradeLetter(const string& gradeLetter)
 
 
 };

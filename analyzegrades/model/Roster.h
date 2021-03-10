@@ -11,9 +11,12 @@ class Roster
     public:
         Roster();
         virtual ~Roster();
-        const vector<Student> getStudents() const;
         void add(Student& student);
-        void remove(Student& student);
+        vector<Student> getStudentsWithLetterGrade(char letterGrade);
+        void sortByGrade();
+        void sortByFirstName();
+        void sortByLastName();
+        int size();
 
     protected:
 

@@ -18,15 +18,15 @@ FileReader::~FileReader()
     //dtor
 }
 
-vector<Student> FileReader::readFile() {
+Roster FileReader::readFile() {
     string line;
-    vector<Student> students;
+    Roster roster = Roster();
     ifstream studentFileStream(this->infile);
     while (getline(studentFileStream, line)) {
         Student student = this->readStudentFromCSVString(line);
-        students.push_back(student);
+        roster.add(student);
     }
-    return students;
+    return roster;
 }
 
 Student FileReader::readStudentFromCSVString(string& line) {

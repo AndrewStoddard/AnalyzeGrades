@@ -21,6 +21,7 @@ public:
     void setName(const string& name);
     int getGrade() const;
     void setGrade(int grade);
+    char getGradeAsLetter();
 };
 
 }

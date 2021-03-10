@@ -2,6 +2,8 @@
 #define CONSOLEOUTPUT_H
 
 #include <string>
+#include "Roster.h"
+using namespace model;
 using namespace std;
 namespace datatier
 {
@@ -21,9 +23,9 @@ public:
     bool getSFFlag() const;
     bool getSGFlag() const;
     int getColumnNumber() const;
-    void makeOutput();
+    void makeOutput(Roster& roster);
 
-
+    string getOutputForStudent(Student student);
     void setColumnNumber(int colNumber);
     const string& getOutput() const;
 

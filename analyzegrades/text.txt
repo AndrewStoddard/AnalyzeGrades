@@ -1,0 +1,4 @@
+alan,walker,20
+Andrew,stoddard,40
+tom,Sanders,60
+Tony,Lazuto,85

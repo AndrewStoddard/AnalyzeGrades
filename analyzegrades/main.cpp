@@ -3,6 +3,8 @@
 #include "AnalyzeGradeController.h"
 #include <vector>
 #include "model/Student.h"
+#include "Roster.h"
+using namespace model;
 using namespace controller;
 using namespace datatier;
 using namespace std;
@@ -15,23 +17,15 @@ int main(int argc, char* argv[])
     AnalyzeGradeController controller = parser.getGradeController();
 
     if(result) {
-        vector<Student> students = controller.getFileReader().readFile();
-        string output = to_string(students.size());
+        Roster roster = controller.getFileReader().readFile();
 
-        output.append("\n");
-        for(vector<Student>::size_type i = 0; i < students.size(); i++) {
-            output.append(students[i].getName());
-            output.append(": ");
-            output.append(to_string(students[i].getGrade()));
-            output.append("\n");
-        }
-        cout << output << endl;
+        controller.getConsoleOutput().makeOutput(roster);
+        cout << controller.getConsoleOutput().getOutput() << endl;
         if(!controller.getFileWriter().getOutfile().empty()) {
 
-            controller.getFileWriter().writeToFile(output);
+            //controller.getFileWriter().writeToFile(output);
             cout << "Wrote to File" << endl;
         }
-        controller.getConsoleOutput().makeOutput();
 
     }
 

@@ -2,3 +2,9 @@ alan,walker,20
 Andrew,stoddard,40
 tom,Sanders,60
 Tony,Lazuto,85
+Allen,Pan,90
+Loch,Ness,99
+Jim,John,92
+Kate,Head,93
+Aoi,pill,32
+Rob,Green,83
