@@ -11,8 +11,6 @@ private:
     char** argv;
     AnalyzeGradeController gradeController;
     bool isNumber(const string& str);
-
-
 public:
     ArgumentParser(char**& argv, int argc);
     virtual ~ArgumentParser();
@@ -20,6 +18,4 @@ public:
     const AnalyzeGradeController& getGradeController() const;
 };
 }
-
-
 #endif // ARGUMENTPARSER_H

@@ -3,33 +3,61 @@
 #include <iomanip>
 #include "Roster.h"
 using namespace model;
-
 namespace controller
 {
+/**
+* Constructor
+*
+*
+*
+*
+*
+*
+*/
 AnalyzeGradeController::AnalyzeGradeController()
 {
-
 }
-
+/**
+* Deconstructor
+*
+*
+*
+*
+*
+*
+*/
 AnalyzeGradeController::~AnalyzeGradeController()
 {
-    //dtor
 }
-
+/**
+* Performs the necessary steps to generate and
+* write output to console and
+* file (if applicable)
+*
+*
+* @return none
+*
+*/
 void AnalyzeGradeController::work()
 {
     Roster roster = this->fileReader.readFile();
-
-    this->consoleOutput.makeOutput(roster);
-    string output = this->consoleOutput.getOutput();
+    this->outputCreator.makeOutput(roster);
+    string output = this->outputCreator.getOutput();
     cout << output << endl;
     if(!this->fileWriter.getOutfile().empty())
     {
         this->fileWriter.writeToFile(output);
     }
-
 }
-
+/**
+* Prints a help message in console.
+*
+*
+*
+*
+* @return none
+*
+*/
 void AnalyzeGradeController::printHelp()
 {
     cout << "Usage:  analyzegrades infile [outfile] [options]"
@@ -56,34 +84,83 @@ void AnalyzeGradeController::printHelp()
          << "   -sf" << "Displays the output in alphabetic order by student’s first name.The default order is by student’s last name." << endl
          << setw(22) << left
          << "   -sg" << "Displays the output with the student grade displayed and sorted by the student’s grade in descending order. " << endl;
-
 }
-void AnalyzeGradeController::setConsoleOutput(ConsoleOutput consoleOutput)
+/**
+* Sets the outputCreater to passed in value
+*
+*
+*
+*@param OutputCreator the output creator
+*@return none
+*
+*/
+void AnalyzeGradeController::setOutputCreator(const OutputCreator outputCreator)
 {
-    this->consoleOutput = consoleOutput;
+    this->outputCreator = outputCreator;
 }
+/**
+* Sets the fileReader to the passed value
+*
+*
+*
+* @param FileReader the file reader
+* @return none
+*
+*/
 void AnalyzeGradeController::setFileReader(const FileReader fileReader)
 {
     this->fileReader = fileReader;
 }
+/**
+* Sets the fileWriter to the passed value
+*
+*
+*
+* @param FileWriter the file writer
+* @return none
+*
+*/
 void AnalyzeGradeController::setFileWriter(const FileWriter fileWriter)
 {
     this->fileWriter = fileWriter;
 }
-
-
-ConsoleOutput AnalyzeGradeController::getConsoleOutput()
+/**
+* Gets the outputCreator
+*
+*
+*
+*
+* @return OutputCreator
+*
+*/
+OutputCreator AnalyzeGradeController::getOutputCreator()
 {
-    return this->consoleOutput;
+    return this->outputCreator;
 }
+/**
+* Gets the fileReader
+*
+*
+*
+*
+* @return FileReader
+*
+*/
 FileReader AnalyzeGradeController::getFileReader() const
 {
     return this->fileReader;
 }
+/**
+* Gets the fileWriter
+*
+*
+*
+*
+* @return FileWriter
+*
+*/
 FileWriter AnalyzeGradeController::getFileWriter() const
 {
     return this->fileWriter;
 }
-
-
 }

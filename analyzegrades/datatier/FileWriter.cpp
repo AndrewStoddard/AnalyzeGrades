@@ -4,16 +4,41 @@
 using namespace std;
 namespace datatier
 {
+/**
+* Constructor
+*
+*
+*
+*
+* @return FileWriter
+*
+*/
 FileWriter::FileWriter()
 {
     this->autoOverwrite = false;
     this->outfile = "";
 }
-
+/**
+* Deconstructor
+*
+*
+*
+*
+*
+*
+*/
 FileWriter::~FileWriter()
 {
-    //dtor
 }
+/**
+* Asks the user if they want to override the outfile
+*
+*
+*
+*
+* @return bool true if override false otherwise
+*
+*/
 bool FileWriter::askOverride()
 {
     cout << "Are you sure you want to override " << this->outfile <<"?";
@@ -34,7 +59,15 @@ bool FileWriter::askOverride()
         cout << "Are you sure you want to override " << this->outfile <<"?";
     }
 }
-
+/**
+* Writes output to file
+*
+*
+*
+* @param string& the output to be written
+* @return none
+*
+*/
 void FileWriter::writeToFile(const string& output)
 {
     ifstream outfileIStream(this->outfile);
@@ -58,15 +91,41 @@ void FileWriter::writeToFile(const string& output)
     }
 
 }
-
+/**
+* Gets the outfile
+*
+*
+*
+*
+* @return string&
+*
+*/
 const string& FileWriter::getOutfile() const
 {
     return this->outfile;
 }
+/**
+* Sets the outfile
+*
+*
+*
+* @param string& outfile
+* @return none
+*
+*/
 void FileWriter::setOutfile(const string& outfile)
 {
     this->outfile = outfile;
 }
+/**
+* Sets overwrite flag
+*
+*
+*
+* @param bool flag to change too
+* @return none
+*
+*/
 void FileWriter::setAutoOverwrite(bool flag)
 {
     this->autoOverwrite = flag;

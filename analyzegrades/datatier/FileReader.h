@@ -10,21 +10,15 @@ namespace datatier
 {
 class FileReader
 {
+private:
+    string infile;
 public:
     FileReader();
     virtual ~FileReader();
-
     const string& getInfile() const;
     void setInfile(const string& infile);
     Student readStudentFromCSVString(string& line);
     Roster readFile();
-
-protected:
-
-private:
-    string infile;
 };
-
 }
-
 #endif // FILEREADER_H

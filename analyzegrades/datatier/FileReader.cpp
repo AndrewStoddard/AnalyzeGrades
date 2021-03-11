@@ -2,22 +2,44 @@
 #include <iostream>
 #include <fstream>
 #include<sstream>
-
-
 using namespace model;
 using namespace std;
 namespace datatier
 {
+/**
+* Constructor
+*
+*
+*
+*
+* @return FileReader
+*
+*/
 FileReader::FileReader()
 {
     this->infile = "";
 }
-
+/**
+* Deconstructor
+*
+*
+*
+*
+*
+*
+*/
 FileReader::~FileReader()
 {
-    //dtor
 }
-
+/**
+* Reads the file into a Roster
+*
+*
+*
+*
+* @return Roster
+*
+*/
 Roster FileReader::readFile()
 {
     string line;
@@ -30,7 +52,15 @@ Roster FileReader::readFile()
     }
     return roster;
 }
-
+/**
+* Reads a string into a Student
+*
+*
+*
+* @param string& the string to be read
+* @return Student
+*
+*/
 Student FileReader::readStudentFromCSVString(string& line)
 {
     vector<string> items;
@@ -45,18 +75,30 @@ Student FileReader::readStudentFromCSVString(string& line)
     Student student(items[0], items[1], stoi(items[2]));
     return student;
 }
-
+/**
+* Gets the infile
+*
+*
+*
+*
+* @return string&
+*
+*/
 const string& FileReader::getInfile() const
 {
     return this->infile;
 }
+/**
+* Sets the infile
+*
+*
+*
+* @param string& the infile
+* @return none
+*
+*/
 void FileReader::setInfile(const string& infile)
 {
     this->infile = infile;
 }
-
-
-
 }
-
-

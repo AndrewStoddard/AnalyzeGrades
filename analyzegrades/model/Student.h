@@ -1,19 +1,15 @@
 #ifndef STUDENT_H
 #define STUDENT_H
-
 #include <string>
 using namespace std;
-
 namespace model
 {
-
 class Student
 {
 private:
     string firstName;
     string lastName;
     int grade;
-
 public:
     Student();
     Student(const string& firstName, const string& lastName, int grade);
@@ -26,7 +22,5 @@ public:
     void setGrade(int grade);
     char getGradeAsLetter();
 };
-
 }
-
 #endif // STUDENT_H

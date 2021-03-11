@@ -1,17 +1,24 @@
-#ifndef CONSOLEOUTPUT_H
-#define CONSOLEOUTPUT_H
-
+#ifndef OutputCreator_H
+#define OutputCreator_H
 #include <string>
 #include "Roster.h"
 using namespace model;
 using namespace std;
-namespace datatier
+namespace view
 {
-class ConsoleOutput
+class OutputCreator
 {
+private:
+    int columnNumber;
+    string output;
+    bool gFlag;
+    bool sfFlag;
+    bool sgFlag;
+    string removedFirstName;
+    string removedLastName;
 public:
-    ConsoleOutput();
-    virtual ~ConsoleOutput();
+    OutputCreator();
+    virtual ~OutputCreator();
     const string& getRemovedFirstName() const;
     void setRemovedFirstName(const string& firstName);
     const string& getRemovedLastName() const;
@@ -24,23 +31,9 @@ public:
     bool getSGFlag() const;
     int getColumnNumber() const;
     void makeOutput(Roster& roster);
-
     string getOutputForStudent(Student student);
     void setColumnNumber(int colNumber);
     const string& getOutput() const;
-
-protected:
-
-private:
-    int columnNumber;
-    string output;
-    bool gFlag;
-    bool sfFlag;
-    bool sgFlag;
-    string removedFirstName;
-    string removedLastName;
 };
 }
-
-
-#endif // CONSOLEOUTPUT_H
+#endif // OutputCreator_H

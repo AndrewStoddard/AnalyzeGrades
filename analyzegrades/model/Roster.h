@@ -3,13 +3,13 @@
 #include "Student.h"
 #include <vector>
 #include "string"
-
 using namespace std;
 namespace model
 {
-
 class Roster
 {
+private:
+    vector<Student> students;
 public:
     Roster();
     virtual ~Roster();
@@ -20,15 +20,6 @@ public:
     void sortByLastName();
     int size();
     void remove(const string& firstName, const string& lastName);
-
-protected:
-
-private:
-    vector<Student> students;
 };
-
 }
-
-
-
 #endif // ROSTER_H

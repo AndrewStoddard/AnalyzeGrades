@@ -1,38 +1,29 @@
 #ifndef ANALYZEGRADECONTROLLER_H
 #define ANALYZEGRADECONTROLLER_H
-
 #include "FileReader.h"
 #include "FileWriter.h"
-#include "ConsoleOutput.h"
+#include "OutputCreator.h"
+using namespace view;
 using namespace datatier;
-
 namespace controller
 {
-
 class AnalyzeGradeController
 {
 private:
-    ConsoleOutput consoleOutput;
+    OutputCreator outputCreator;
     FileReader fileReader;
     FileWriter fileWriter;
-
 public:
     AnalyzeGradeController();
     virtual ~AnalyzeGradeController();
-
-    void setConsoleOutput(const ConsoleOutput consoleOutput);
+    void setOutputCreator(const OutputCreator outputCreator);
     void setFileReader(const FileReader fileReader);
     void setFileWriter(const FileWriter fileWriter);
-    ConsoleOutput getConsoleOutput();
+    OutputCreator getOutputCreator();
     FileReader getFileReader() const;
     FileWriter getFileWriter() const;
     void work();
     void printHelp();
-
-
-
 };
-
 }
-
 #endif

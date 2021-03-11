@@ -4,16 +4,22 @@
 #include <string>
 #include "FileReader.h"
 #include "FileWriter.h"
-#include "ConsoleOutput.h"
+#include "OutputCreator.h"
 #include <algorithm>
 #include "AnalyzeGradeController.h"
-
 using namespace controller;
-
 using namespace std;
-
 namespace datatier
 {
+/**
+* Constructor
+*
+*
+* @param char**& reference to the args
+* @param int number of args
+*
+*
+*/
 ArgumentParser::ArgumentParser(char**& argv, int argc)
 {
     this->argc = argc;
@@ -21,25 +27,47 @@ ArgumentParser::ArgumentParser(char**& argv, int argc)
     this->gradeController = AnalyzeGradeController();
 
 }
-
+/**
+* Deconstructor
+*
+*
+*
+*
+*
+*
+*/
 ArgumentParser::~ArgumentParser()
 {
-    //dtor
 }
-
+/**
+*
+*
+*
+* @param
+* @param
+* @return
+*
+*/
 const AnalyzeGradeController& ArgumentParser::getGradeController() const
 {
     return this->gradeController;
 }
-
-
+/**
+* Parses the args into the grade controller
+*
+*
+*
+*
+* @return bool true if succeeded false otherwise
+*
+*/
 bool ArgumentParser::parse()
 {
     bool cFlag = false;
     bool rFlag = false;
     FileReader fileReader = FileReader();
     FileWriter fileWriter = FileWriter();
-    ConsoleOutput consoleOutput = ConsoleOutput();
+    OutputCreator outputCreator = OutputCreator();
     if(this->argc < 2)
     {
         return false;
@@ -54,7 +82,7 @@ bool ArgumentParser::parse()
                 cout << "No column amount specified" << endl;
                 return false;
             }
-            consoleOutput.setColumnNumber(stoi(arg));
+            outputCreator.setColumnNumber(stoi(arg));
             cFlag = false;
         }
         else if (rFlag)
@@ -64,13 +92,13 @@ bool ArgumentParser::parse()
                 cout << "No Name to Remove Specified" << endl;
                 return false;
             }
-            if (consoleOutput.getRemovedFirstName().empty())
+            if (outputCreator.getRemovedFirstName().empty())
             {
-                consoleOutput.setRemovedFirstName(arg);
+                outputCreator.setRemovedFirstName(arg);
             }
             else
             {
-                consoleOutput.setRemovedLastName(arg);
+                outputCreator.setRemovedLastName(arg);
                 rFlag = false;
             }
         }
@@ -86,7 +114,7 @@ bool ArgumentParser::parse()
             }
             else if (arg == "-g")
             {
-                consoleOutput.setGFlag(true);
+                outputCreator.setGFlag(true);
             }
             else if (arg == "-o")
             {
@@ -98,21 +126,21 @@ bool ArgumentParser::parse()
             }
             else if(arg == "-sf")
             {
-                if(consoleOutput.getSGFlag())
+                if(outputCreator.getSGFlag())
                 {
                     cout << "Cannot specify both -sg and -sf" << endl;
                     return false;
                 }
-                consoleOutput.setSFFlag(true);
+                outputCreator.setSFFlag(true);
             }
             else if(arg == "-sg")
             {
-                if(consoleOutput.getSFFlag())
+                if(outputCreator.getSFFlag())
                 {
                     cout << "Cannot specify both -sf and -sg" << endl;
                     return false;
                 }
-                consoleOutput.setSGFlag(true);
+                outputCreator.setSGFlag(true);
             }
             else
             {
@@ -133,7 +161,6 @@ bool ArgumentParser::parse()
                     cout << "Input File Not Found" << endl;
                     return false;
                 }
-
             }
             else if (fileWriter.getOutfile().empty())
             {
@@ -145,9 +172,6 @@ bool ArgumentParser::parse()
                 return false;
             }
         }
-
-
-
     }
     if (fileReader.getInfile().empty())
     {
@@ -155,10 +179,7 @@ bool ArgumentParser::parse()
     }
     gradeController.setFileReader(fileReader);
     gradeController.setFileWriter(fileWriter);
-    gradeController.setConsoleOutput(consoleOutput);
+    gradeController.setOutputCreator(outputCreator);
     return true;
-
 }
-
-
 }
