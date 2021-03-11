@@ -1,19 +1,20 @@
 # depslib dependency file v1.0
-1615362025 source:/home/astodda2/Desktop/AnalyzeGrades/analyzegrades/controller/AnalyzeGradeController.cpp
+1615430614 source:/home/astodda2/Desktop/AnalyzeGrades/analyzegrades/controller/AnalyzeGradeController.cpp
 	"AnalyzeGradeController.h"
 	<iostream>
 	<iomanip>
+	"Roster.h"
 
 1615362002 /home/astodda2/Desktop/AnalyzeGrades/analyzegrades/controller/AnalyzeGradeController.h
 	"FileReader.h"
 	"FileWriter.h"
 	"ConsoleOutput.h"
 
-1615353515 /home/astodda2/Desktop/AnalyzeGrades/analyzegrades/datatier/FileReader.h
+1615430691 /home/astodda2/Desktop/AnalyzeGrades/analyzegrades/datatier/FileReader.h
 	<vector>
 	<string>
 	"Roster.h"
-	"../model/Student.h"
+	"Student.h"
 
 1615257905 /home/astodda2/Desktop/AnalyzeGrades/analyzegrades/datatier/FileWriter.h
 	<string>
@@ -22,7 +23,7 @@
 	<string>
 	"Roster.h"
 
-1615360876 source:/home/astodda2/Desktop/AnalyzeGrades/analyzegrades/datatier/ConsoleOutput.cpp
+1615430612 source:/home/astodda2/Desktop/AnalyzeGrades/analyzegrades/datatier/ConsoleOutput.cpp
 	"ConsoleOutput.h"
 	<iostream>
 	<sstream>
@@ -30,24 +31,24 @@
 	<string>
 	"Student.h"
 
-1615358438 source:/home/astodda2/Desktop/AnalyzeGrades/analyzegrades/datatier/FileReader.cpp
+1615430619 source:/home/astodda2/Desktop/AnalyzeGrades/analyzegrades/datatier/FileReader.cpp
 	"FileReader.h"
 	<iostream>
 	<fstream>
 	<sstream>
 
-1615262589 source:/home/astodda2/Desktop/AnalyzeGrades/analyzegrades/datatier/FileWriter.cpp
+1615430622 source:/home/astodda2/Desktop/AnalyzeGrades/analyzegrades/datatier/FileWriter.cpp
 	"FileWriter.h"
 	<fstream>
 	<iostream>
 
-1615358755 source:/home/astodda2/Desktop/AnalyzeGrades/analyzegrades/model/Student.cpp
+1615430621 source:/home/astodda2/Desktop/AnalyzeGrades/analyzegrades/model/Student.cpp
 	"Student.h"
 
 1615358739 /home/astodda2/Desktop/AnalyzeGrades/analyzegrades/model/Student.h
 	<string>
 
-1615363335 source:/home/astodda2/Desktop/AnalyzeGrades/analyzegrades/datatier/ArgumentParser.cpp
+1615430617 source:/home/astodda2/Desktop/AnalyzeGrades/analyzegrades/datatier/ArgumentParser.cpp
 	"ArgumentParser.h"
 	<iostream>
 	<fstream>
@@ -55,12 +56,13 @@
 	"FileReader.h"
 	"FileWriter.h"
 	"ConsoleOutput.h"
+	<algorithm>
 	"AnalyzeGradeController.h"
 
 1615363623 /home/astodda2/Desktop/AnalyzeGrades/analyzegrades/datatier/ArgumentParser.h
 	"AnalyzeGradeController.h"
 
-1615362038 source:/home/astodda2/Desktop/AnalyzeGrades/analyzegrades/main.cpp
+1615430621 source:/home/astodda2/Desktop/AnalyzeGrades/analyzegrades/main.cpp
 	<iostream>
 	"ArgumentParser.h"
 	"AnalyzeGradeController.h"
@@ -68,12 +70,12 @@
 	"model/Student.h"
 	"Roster.h"
 
-1615360239 /home/astodda2/Desktop/AnalyzeGrades/analyzegrades/model/Roster.h
+1615430622 /home/astodda2/Desktop/AnalyzeGrades/analyzegrades/model/Roster.h
 	"Student.h"
 	<vector>
 	"string"
 
-1615360260 source:/home/astodda2/Desktop/AnalyzeGrades/analyzegrades/model/Roster.cpp
+1615430621 source:/home/astodda2/Desktop/AnalyzeGrades/analyzegrades/model/Roster.cpp
 	"Roster.h"
 	<vector>
 	"Student.h"

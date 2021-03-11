@@ -3,7 +3,7 @@
 #include <vector>
 #include <string>
 #include "Roster.h"
-#include "../model/Student.h"
+#include "Student.h"
 using namespace model;
 using namespace std;
 namespace datatier

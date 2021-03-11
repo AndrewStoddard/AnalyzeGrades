@@ -14,9 +14,11 @@ FileWriter::~FileWriter()
 {
     //dtor
 }
-bool FileWriter::askOverride() {
+bool FileWriter::askOverride()
+{
     cout << "Are you sure you want to override " << this->outfile <<"?";
-    while (true) {
+    while (true)
+    {
         string response;
         cin >> response;
         cout << endl;
@@ -24,37 +26,49 @@ bool FileWriter::askOverride() {
         if (response.empty()) continue;
         switch (toupper( response[ 0 ] ))
         {
-            case 'Y': return true;
-            case 'N': return false;
+        case 'Y':
+            return true;
+        case 'N':
+            return false;
         }
         cout << "Are you sure you want to override " << this->outfile <<"?";
     }
-  }
+}
 
-void FileWriter::writeToFile(const string& output) {
+void FileWriter::writeToFile(const string& output)
+{
     ifstream outfileIStream(this->outfile);
     bool exists = outfileIStream.good();
     ofstream outfileOStream(this->outfile);
 
-    if(exists) {
-        if (this->autoOverwrite || askOverride()){
+    if(exists)
+    {
+        if (this->autoOverwrite || askOverride())
+        {
             outfileOStream << output;
-        } else {
+        }
+        else
+        {
             cout << "File was not written" << endl;
         }
-    } else {
+    }
+    else
+    {
         outfileOStream << output;
     }
 
 }
 
-const string& FileWriter::getOutfile() const {
+const string& FileWriter::getOutfile() const
+{
     return this->outfile;
 }
-void FileWriter::setOutfile(const string& outfile) {
+void FileWriter::setOutfile(const string& outfile)
+{
     this->outfile = outfile;
 }
-void FileWriter::setAutoOverwrite(bool flag) {
+void FileWriter::setAutoOverwrite(bool flag)
+{
     this->autoOverwrite = flag;
 }
 

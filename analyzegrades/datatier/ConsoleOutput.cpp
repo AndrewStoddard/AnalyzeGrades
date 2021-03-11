@@ -19,26 +19,36 @@ ConsoleOutput::ConsoleOutput()
     this->columnNumber = 3;
 }
 
-void ConsoleOutput::makeOutput(Roster& roster) {
+void ConsoleOutput::makeOutput(Roster& roster)
+{
     ostringstream result;
     roster.remove(this->removedFirstName, this->removedLastName);
-    if (this->sgFlag) {
+    if (this->sgFlag)
+    {
         roster.sortByGrade();
-    } else if (this->sfFlag) {
+    }
+    else if (this->sfFlag)
+    {
         roster.sortByFirstName();
-    } else {
+    }
+    else
+    {
         roster.sortByLastName();
     }
     char letterGrades[5] = {'A', 'B', 'C', 'D', 'F'};
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 5; i++)
+    {
         vector<Student> students = roster.getStudentsWithLetterGrade(letterGrades[i]);
 
-        if(!students.empty()) {
+        if(!students.empty())
+        {
             result << "Students earning a " << letterGrades[i] << ":" << endl;
-            for (vector<Student>::size_type j = 0; j < students.size(); j++) {
+            for (vector<Student>::size_type j = 0; j < students.size(); j++)
+            {
 
                 result << setw(22) << left << getOutputForStudent(students[j]);
-                if ((j + 1) % this->columnNumber == 0 && (j + 1) != students.size()) {
+                if ((j + 1) % this->columnNumber == 0 && (j + 1) != students.size())
+                {
                     result << endl;
                 }
 
@@ -51,10 +61,12 @@ void ConsoleOutput::makeOutput(Roster& roster) {
     this->output = result.str();
 }
 
-string ConsoleOutput::getOutputForStudent(Student student) {
+string ConsoleOutput::getOutputForStudent(Student student)
+{
     ostringstream result;
     result << student.getFirstName() << " " << student.getLastName();
-    if (this->gFlag) {
+    if (this->gFlag)
+    {
         result << " (" << student.getGrade() << ")";
     }
 
@@ -67,44 +79,57 @@ ConsoleOutput::~ConsoleOutput()
     //dtor
 }
 
-bool ConsoleOutput::getGFlag() const {
+bool ConsoleOutput::getGFlag() const
+{
     return this->gFlag;
 }
-bool ConsoleOutput::getSFFlag() const {
+bool ConsoleOutput::getSFFlag() const
+{
     return this->sfFlag;
 }
-bool ConsoleOutput::getSGFlag() const {
+bool ConsoleOutput::getSGFlag() const
+{
     return this->sgFlag;
 }
-int ConsoleOutput::getColumnNumber() const {
+int ConsoleOutput::getColumnNumber() const
+{
     return this->columnNumber;
 }
 
-const string& ConsoleOutput::getRemovedFirstName() const {
+const string& ConsoleOutput::getRemovedFirstName() const
+{
     return this->removedFirstName;
 }
-void ConsoleOutput::setRemovedFirstName(const string& firstName) {
+void ConsoleOutput::setRemovedFirstName(const string& firstName)
+{
     this->removedFirstName = firstName;
 }
-const string& ConsoleOutput::getRemovedLastName() const {
+const string& ConsoleOutput::getRemovedLastName() const
+{
     return this->removedLastName;
 }
-void ConsoleOutput::setRemovedLastName(const string& lastName) {
+void ConsoleOutput::setRemovedLastName(const string& lastName)
+{
     this->removedLastName = lastName;
 }
-void ConsoleOutput::setGFlag(bool flag) {
+void ConsoleOutput::setGFlag(bool flag)
+{
     this->gFlag = flag;
 }
-void ConsoleOutput::setSFFlag(bool flag) {
+void ConsoleOutput::setSFFlag(bool flag)
+{
     this->sfFlag = flag;
 }
-void ConsoleOutput::setSGFlag(bool flag) {
+void ConsoleOutput::setSGFlag(bool flag)
+{
     this->sgFlag = flag;
 }
-void ConsoleOutput::setColumnNumber(int colNumber) {
+void ConsoleOutput::setColumnNumber(int colNumber)
+{
     this->columnNumber = colNumber;
 }
-const string& ConsoleOutput::getOutput() const {
+const string& ConsoleOutput::getOutput() const
+{
     return this->output;
 }
 

@@ -1,6 +1,8 @@
 #include "AnalyzeGradeController.h"
 #include <iostream>
 #include <iomanip>
+#include "Roster.h"
+using namespace model;
 
 namespace controller
 {
@@ -14,19 +16,22 @@ AnalyzeGradeController::~AnalyzeGradeController()
     //dtor
 }
 
-void AnalyzeGradeController::work() {
+void AnalyzeGradeController::work()
+{
     Roster roster = this->fileReader.readFile();
 
     this->consoleOutput.makeOutput(roster);
     string output = this->consoleOutput.getOutput();
     cout << output << endl;
-    if(!this->fileWriter.getOutfile().empty()) {
+    if(!this->fileWriter.getOutfile().empty())
+    {
         this->fileWriter.writeToFile(output);
     }
 
 }
 
-void AnalyzeGradeController::printHelp() {
+void AnalyzeGradeController::printHelp()
+{
     cout << "Usage:  analyzegrades infile [outfile] [options]"
          << endl
          << "Performs a simple grade analysis of the students and grades contained in infile."
@@ -53,24 +58,30 @@ void AnalyzeGradeController::printHelp() {
          << "   -sg" << "Displays the output with the student grade displayed and sorted by the student’s grade in descending order. " << endl;
 
 }
-void AnalyzeGradeController::setConsoleOutput(ConsoleOutput consoleOutput) {
+void AnalyzeGradeController::setConsoleOutput(ConsoleOutput consoleOutput)
+{
     this->consoleOutput = consoleOutput;
 }
-void AnalyzeGradeController::setFileReader(const FileReader fileReader) {
+void AnalyzeGradeController::setFileReader(const FileReader fileReader)
+{
     this->fileReader = fileReader;
 }
-void AnalyzeGradeController::setFileWriter(const FileWriter fileWriter) {
+void AnalyzeGradeController::setFileWriter(const FileWriter fileWriter)
+{
     this->fileWriter = fileWriter;
 }
 
 
-ConsoleOutput AnalyzeGradeController::getConsoleOutput() {
+ConsoleOutput AnalyzeGradeController::getConsoleOutput()
+{
     return this->consoleOutput;
 }
-FileReader AnalyzeGradeController::getFileReader() const {
+FileReader AnalyzeGradeController::getFileReader() const
+{
     return this->fileReader;
 }
-FileWriter AnalyzeGradeController::getFileWriter() const {
+FileWriter AnalyzeGradeController::getFileWriter() const
+{
     return this->fileWriter;
 }
 

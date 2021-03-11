@@ -16,10 +16,13 @@ int main(int argc, char* argv[])
     bool result = parser.parse();
     AnalyzeGradeController controller = parser.getGradeController();
 
-    if(result) {
+    if(result)
+    {
         controller.work();
 
-    } else {
+    }
+    else
+    {
         controller.printHelp();
     }
 

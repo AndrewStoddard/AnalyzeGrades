@@ -5,25 +5,26 @@
 #include "string"
 
 using namespace std;
-namespace model {
+namespace model
+{
 
 class Roster
 {
-    public:
-        Roster();
-        virtual ~Roster();
-        void add(Student& student);
-        vector<Student> getStudentsWithLetterGrade(char letterGrade);
-        void sortByGrade();
-        void sortByFirstName();
-        void sortByLastName();
-        int size();
-        void remove(const string& firstName, const string& lastName);
+public:
+    Roster();
+    virtual ~Roster();
+    void add(Student& student);
+    vector<Student> getStudentsWithLetterGrade(char letterGrade);
+    void sortByGrade();
+    void sortByFirstName();
+    void sortByLastName();
+    int size();
+    void remove(const string& firstName, const string& lastName);
 
-    protected:
+protected:
 
-    private:
-        vector<Student> students;
+private:
+    vector<Student> students;
 };
 
 }
